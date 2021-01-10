@@ -1,18 +1,18 @@
 # Это игра по угадыванию чисел
-import random
+import random # Импортируем модуль random
 
-guessesTaken = 0
+guessesTaken = 0 # Приваеваем переменной значение = 0
 
-print('Привет! Как тебя зовут?')
-myName = input()
+print('Привет! Как тебя зовут?') # Выводим на экран строку ('')
+myName = input() # Получаем от пользователя информацию и приваеваем ее переменно myName
 
-number = random.randint(1, 20)
-print('Что ж, ' + myName + ', я загадываю число от 1 до 20.')
+number = random.randint(1, 10) # Приваеваем переменной number = случайное значение(число) от 1 до 20
+print('Что ж, ' + myName + ', я загадываю число от 1 до 10. На все это, ' + myName + ', у тебя есть 3 попытки. Удачи!') # Выводим на экран имя пользователя и условия игры
 
-for guessesTaken in range(6):
+for guessesTaken in range(3): # Запускаем цикл for
     print('Попробуй угадать.') # Четыре пробела перед именем функции print
-    guess = input()
-    guess = int(guess)
+    guess = input() # Получаем число от игрока
+    guess = int(guess) # Приводим результат в целое число с помощью функции int()?
 
     if guess < number:
         print('Твое число слишком маленькое.')
@@ -20,7 +20,7 @@ for guessesTaken in range(6):
     if guess > number:
         print('Твое число слишком большое.')
 
-    if guess == number:
+    if guess == number: # если число угадано то цикл завершается
         break
 
 if guess == number:
